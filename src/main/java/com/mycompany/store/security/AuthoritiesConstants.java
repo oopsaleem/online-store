@@ -6,8 +6,10 @@ package com.mycompany.store.security;
 public final class AuthoritiesConstants {
 
     public static final String ADMIN = "ROLE_ADMIN";
-
+    public static final String ADMIN_MINI_LINK = "ROLE_ADMIN_MINI_LINK";
+    
     public static final String USER = "ROLE_USER";
+    public static final String USER_MINI_LINK = "ROLE_USER_MINI_LINK";
 
     public static final String ANONYMOUS = "ROLE_ANONYMOUS";
 
