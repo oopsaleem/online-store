@@ -195,3 +195,29 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [protractor]: https://angular.github.io/protractor/
 [leaflet]: https://leafletjs.com/
 [definitelytyped]: https://definitelytyped.org/
+
+## To modify the code:
+
+Assuming you want to develop a new feature: myFeature.
+
+    git checkout -b myFeature master
+
+Creates MyFeature branch off master. Do your work and then
+
+    git commit -am "Your message"
+
+Now merge your changes to master without a fast-forward
+
+    git checkout master
+    git merge --no-ff myFeature
+
+Now push changes to the server
+
+    git push origin master
+    git push origin myFeature
+
+And you'll see it how you want it.
+
+## To generate secret key
+
+    node -e "console.log(require('crypto').randomBytes(128).toString('base64'));"
