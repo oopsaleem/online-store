@@ -30,6 +30,7 @@ export class InvoiceUpdateComponent implements OnInit {
     paymentMethod: [null, [Validators.required]],
     paymentDate: [null, [Validators.required]],
     paymentAmount: [null, [Validators.required]],
+    code: [null, [Validators.required]],
     order: []
   });
 
@@ -64,6 +65,7 @@ export class InvoiceUpdateComponent implements OnInit {
       paymentMethod: invoice.paymentMethod,
       paymentDate: invoice.paymentDate != null ? invoice.paymentDate.format(DATE_TIME_FORMAT) : null,
       paymentAmount: invoice.paymentAmount,
+      code: invoice.code,
       order: invoice.order
     });
   }
@@ -93,6 +95,7 @@ export class InvoiceUpdateComponent implements OnInit {
       paymentDate:
         this.editForm.get(['paymentDate'])!.value != null ? moment(this.editForm.get(['paymentDate'])!.value, DATE_TIME_FORMAT) : undefined,
       paymentAmount: this.editForm.get(['paymentAmount'])!.value,
+      code: this.editForm.get(['code'])!.value,
       order: this.editForm.get(['order'])!.value
     };
   }

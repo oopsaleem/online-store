@@ -42,7 +42,7 @@ export const productRoute: Routes = [
       pagingParams: JhiResolvePagingParams
     },
     data: {
-      authorities: ['ROLE_ADMIN_MINI_LINK', 'ROLE_USER_MINI_LINK'],
+      authorities: ['ROLE_USER_MINI_LINK'],
       defaultSort: 'id,asc',
       pageTitle: 'storeApp.product.home.title'
     },
@@ -55,7 +55,7 @@ export const productRoute: Routes = [
       product: ProductResolve
     },
     data: {
-      authorities: ['ROLE_ADMIN_MINI_LINK', 'ROLE_USER_MINI_LINK'],
+      authorities: ['ROLE_USER_MINI_LINK'],
       pageTitle: 'storeApp.product.home.title'
     },
     canActivate: [UserRouteAccessService]

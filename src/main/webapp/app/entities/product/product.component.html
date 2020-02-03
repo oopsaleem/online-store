@@ -5,7 +5,7 @@
             class="btn btn-primary float-right jh-create-entity create-product" [routerLink]="['/product/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
             <span jhiTranslate="storeApp.product.home.createLabel">
-                Create a new Product
+            Create a new Product
             </span>
         </button>
     </h2>
@@ -41,7 +41,7 @@
                         <fa-icon [icon]="'sort'"></fa-icon>
                     </span>
                 </button>
-                <button type="button" class="btn btn-light btn-sm" jhiSortBy="productCategory.id">
+                <button type="button" class="btn btn-light btn-sm" jhiSortBy="productCategory.name">
                     <span class="d-flex">
                         <span jhiTranslate="storeApp.product.productCategory">Product Category</span>&nbsp;
                         <fa-icon [icon]="'sort'"></fa-icon>
