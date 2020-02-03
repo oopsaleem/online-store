@@ -2,6 +2,7 @@ package com.mycompany.store.web.rest;
 
 import com.mycompany.store.StoreApp;
 import com.mycompany.store.domain.Invoice;
+import com.mycompany.store.domain.ProductOrder;
 import com.mycompany.store.repository.InvoiceRepository;
 import com.mycompany.store.service.InvoiceService;
 import com.mycompany.store.web.rest.errors.ExceptionTranslator;
@@ -112,6 +113,16 @@ public class InvoiceResourceIT {
             .paymentDate(DEFAULT_PAYMENT_DATE)
             .paymentAmount(DEFAULT_PAYMENT_AMOUNT)
             .code(DEFAULT_CODE);
+        // Add required entity
+        ProductOrder productOrder;
+        if (TestUtil.findAll(em, ProductOrder.class).isEmpty()) {
+            productOrder = ProductOrderResourceIT.createEntity(em);
+            em.persist(productOrder);
+            em.flush();
+        } else {
+            productOrder = TestUtil.findAll(em, ProductOrder.class).get(0);
+        }
+        invoice.setOrder(productOrder);
         return invoice;
     }
     /**
@@ -129,6 +140,16 @@ public class InvoiceResourceIT {
             .paymentDate(UPDATED_PAYMENT_DATE)
             .paymentAmount(UPDATED_PAYMENT_AMOUNT)
             .code(UPDATED_CODE);
+        // Add required entity
+        ProductOrder productOrder;
+        if (TestUtil.findAll(em, ProductOrder.class).isEmpty()) {
+            productOrder = ProductOrderResourceIT.createUpdatedEntity(em);
+            em.persist(productOrder);
+            em.flush();
+        } else {
+            productOrder = TestUtil.findAll(em, ProductOrder.class).get(0);
+        }
+        invoice.setOrder(productOrder);
         return invoice;
     }
 

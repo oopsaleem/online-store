@@ -22,6 +22,7 @@
             "relationshipType": "many-to-one",
             "otherEntityName": "invoice",
             "otherEntityRelationshipName": "shipment",
+            "relationshipValidateRules": "required",
             "relationshipName": "invoice",
             "otherEntityField": "code"
         }
